@@ -5,11 +5,11 @@ $Param["unit"] = sql_injection_anti($_GET["unit"]);
 
 //預設
 if (empty($Param["unit"])) {
-    $Param["unit"] = '20150216';
+    $Param["unit"] = '20150316';
 }
 
 // INIT
-$unit1 = 'egg'; //'aranzi';
+$unit1 = '20150216'; //'aranzi';
 $unit2 = $Param["unit"];
 $vars['user_id'] = sql_injection_anti($_GET["user_id"]);
 $vars['unit'] = $Param["unit"];
@@ -455,10 +455,10 @@ EOD;
         $vars['web']['images_path_start'] = "../templateiPhone/${TEMPLATE_FORDER}/css/start/images/";  
         $vars['web']['css_start'] = "../templateiPhone/{$TEMPLATE_FORDER}/css/start/css.css";  
         $vars['web']['btn_winner_submit'] = $vars['web']['images_path_winner']."BtnSubmit.png";  
+        $vars['web']['images_path_winner'] = "../templateiPhone/{$TEMPLATE_FORDER}/css/winner/images/";  
+        $vars['web']['css_winner'] = "../templateiPhone/{$TEMPLATE_FORDER}/css/winner/css.css"; 
 
         ////------------------ WINNER
-        // $vars['web']['images_path_winner'] = "../templateiPhone/{$TEMPLATE_FORDER}/css/winner/images/";  
-        // $vars['web']['css_winner'] = "../templateiPhone/{$TEMPLATE_FORDER}/css/winner/css.css"; 
         // $vars['web']['btn_winner_submit'] = $vars['web']['images_path_winner']."download.png";  
         // $vars['web']['link_to_winner'] = "http://www.family.com.tw/marketing/PublicDetail.aspx?ID=1045";  
         // $vars['download']['filename'] = "中獎通知書-{$vars['web']['title']}.doc";  
@@ -486,6 +486,9 @@ $myFile = $vars['download']['myFile'];
 function  getHomeButton($unit, $datetime='')
 {
     switch($unit){
+        case '20150316':
+            $button = 'go';
+            break;
         case '20150216':
             $button = 'no';
             break;
